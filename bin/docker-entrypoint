@@ -3,6 +3,7 @@
 # If running the rails server then create or migrate existing database
 if [ "${1}" == "./bin/rails" ] && [ "${2}" == "server" ]; then
   AUTO_ACCEPT=1 ./bin/rails db:prepare
+  ./bin/rake db:seed
 fi
 
 exec "${@}"
